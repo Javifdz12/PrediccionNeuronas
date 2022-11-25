@@ -1,5 +1,6 @@
-import tensorflow as tf
 import matplotlib.pyplot as plt
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 
 class PerceptronTensorFlow:
     def __init__(self,valores_entradas_X,valores_a_predecir_Y,epochs):
@@ -36,7 +37,7 @@ class PerceptronTensorFlow:
         self.funcion_error = tf.reduce_sum(tf.pow(self.tf_valores_reales_Y-self.prediccion,2))
 
         #Descenso de gradiente con una tasa de aprendizaje fijada a 0,1
-        self.optimizador = tf.GradientDescentOptimizer(learning_rate=0.1).minimize(self.funcion_error)
+        self.optimizador = tf.train.GradientDescentOptimizer(learning_rate=0.1).minimize(self.funcion_error)
         self.init = tf.global_variables_initializer()
         self.sesion = tf.Session()
         self.Grafica_MSE=[]
