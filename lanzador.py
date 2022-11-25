@@ -14,7 +14,8 @@ def menu():
 
 def lanzar():
     Perceptron1=Perceptron(array([[1, 0],[1, 1],[0, 1],[0, 0]]),array([[0],[1], [0],[0]]),-1,1,1,0,0.1,3000)
-    #PerceptronTensorFlow1=PerceptronTensorFlow([[1., 0.], [1., 1.], [0., 1.], [0., 0.]],[[0.], [1.], [0.], [0.]],10000)
+    PerceptronTensorFlow1=PerceptronTensorFlow([[1., 0.], [1., 1.], [0., 1.], [0., 0.]],[[0.], [1.], [0.], [0.]],10000)
+
     while True:
         menu()
         opcion=int(input("> "))
@@ -25,8 +26,8 @@ def lanzar():
 
         if opcion == 2:
             pass
-            #PerceptronTensorFlow1.aprendizaje()
-            #PerceptronTensorFlow1.visualización()
+            PerceptronTensorFlow1.aprendizaje()
+            PerceptronTensorFlow1.visualización()
 
         if opcion == 3:
             print("Saliendo...\n")
